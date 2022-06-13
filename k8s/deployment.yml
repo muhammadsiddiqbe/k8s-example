@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejs-deployment
+  template:
+    metadata: # Dictionary
+      name: nodejs-deployment
+      labels: # Dictionary
+        app: nodejs-deployment # Key value paids
+    spec:
+      containers: # List
+        - name: nodejs-deployment
+          image: muhammadsiddiqbe/k8s:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
