@@ -8,12 +8,12 @@ spec:
     matchLabels:
       app: nodejs-deployment
   template:
-    metadata: # Dictionary
+    metadata:
       name: nodejs-deployment
-      labels: # Dictionary
-        app: nodejs-deployment # Key value paids
+      labels:
+        app: nodejs-deployment
     spec:
-      containers: # List
+      containers:
         - name: nodejs-deployment
           image: muhammadsiddiqbe/k8s:latest
           ports:
