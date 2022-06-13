@@ -1,0 +1,10 @@
+IMAGE_NAME=my-node-backend
+
+build-image:
+	docker build -t ${IMAGE_NAME} .
+
+run-image:
+	docker run -it -d -p 3000:3000 --name ${IMAGE_NAME} --rm ${IMAGE_NAME}
+
+rm-container:
+	docker rm -f ${IMAGE_NAME}
